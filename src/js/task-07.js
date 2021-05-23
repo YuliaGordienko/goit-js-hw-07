@@ -7,14 +7,23 @@
 // <br />
 // <span id="text">Абракадабра!</span>
 const inputEl = document.querySelector('#font-size-control');
+const spanText = document.querySelector('#text');
 
-const spanText = document.getElementById('text');
-const findFontSize = document.defaultView.getComputedStyle(spanText).fontSize;
-const fontSize = parseInt(findFontSize);
+
 
 
 inputEl.addEventListener('input', onInputChange)
 
 function onInputChange(event) {
-    spanText.style.fontSize = '36px'
+    
+    const numberOfNewFont = getRandomInt(16, 45)
+   spanText.style.fontSize = `${numberOfNewFont}px`
+    
+    }
+
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; 
 }
