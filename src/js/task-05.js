@@ -14,6 +14,9 @@ const spanEl = document.querySelector('#name-output');
 inputEl.addEventListener('input', onInputEnter)
 
 function onInputEnter(event) {
+   if (!inputEl.value) {
+      return spanEl.textContent = `незнакомец`
+   }
    spanEl.textContent = event.currentTarget.value; 
 };
     //spanEl.textContent = event.currentTarget.value;
