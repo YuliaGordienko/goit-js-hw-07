@@ -23,13 +23,14 @@ const mainList = document.querySelector('#gallery');
 mainList.classList.add('lists')
 
 for (const image of images) {
-    const li = document.createElement('li');
-    const imgTag = document.createElement('img');
-  li.appendChild(imgTag);
-  imgTag.classList.add('styles-for-img')
-    imgTag.src = image.url;
-  imgTag.alt = image.alt;
-   mainList.appendChild(li);
-  console.log(li)
+  
+ mainList.insertAdjacentHTML('afterbegin', `<li><img class= "styles-for-img"></li>`)
+  const img = document.querySelector('.styles-for-img')
+   img.src = image.url;
+   img.alt = image.alt;
+
    
 }
+
+
+ 
